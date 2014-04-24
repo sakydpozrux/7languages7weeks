@@ -14,3 +14,8 @@ list_min(A, [X, Xs|Xss]) :-
   list_min(A, [Xs|Xss]).
 
 
+bubble_sort([A], [A]) :- !.
+bubble_sort([Xh|Xt], Y) :-
+  list_min(Xh, Y),
+  select(Xh, Y, Ys),
+  bubble_sort(Xt, Ys), !.
